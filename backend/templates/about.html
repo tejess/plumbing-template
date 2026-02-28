@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+
+{% block title %}About Us — Apex Plumbing Co.{% endblock %}
+
+{% block content %}
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE HEADER BANNER
+════════════════════════════════════════════════════════ -->
+<section class="bg-gradient-to-br from-slate-900 to-blue-900 text-white py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">About Apex Plumbing Co.</h1>
+    <p class="text-blue-200 text-lg max-w-2xl mx-auto">
+      Family-owned and operated since 1993. Serving New York City with honesty, skill, and pride.
+    </p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     COMPANY STORY
+════════════════════════════════════════════════════════ -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+      <!-- Left: story text -->
+      <div>
+        <span class="text-blue-600 font-semibold text-sm uppercase tracking-widest">Our Story</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-6">
+          Built on 30 Years of Hard Work
+        </h2>
+
+        <div class="space-y-4 text-slate-600 leading-relaxed">
+          <p>
+            Apex Plumbing Co. was founded in 1993 by <strong>Frank Rossi</strong>, who spent his early
+            career as an apprentice under some of Brooklyn's best master plumbers. After earning his
+            New York State Master Plumber License in 1991, Frank spent two years working for larger
+            firms before deciding to go out on his own.
+          </p>
+          <p>
+            He started with one truck, one toolbox, and a commitment to never leave a job site
+            until the customer was 100% satisfied. Word spread quickly through Bay Ridge and
+            Bensonhurst, and within three years, Frank had hired his first two employees.
+          </p>
+          <p>
+            Today, Apex Plumbing is a team of eight licensed plumbers serving all five boroughs
+            of New York City. We've completed over 5,000 jobs — from a dripping kitchen faucet
+            in a studio apartment to a full commercial pipe replacement in a 20-story Midtown building.
+          </p>
+          <p>
+            We've never taken on investors, never franchised, and never sent a subcontractor
+            to a job without our direct supervision. Every plumber on our team is personally
+            hired and trained by Frank, holds a valid New York City plumber's license, and has
+            passed a comprehensive background check.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: key facts card -->
+      <div class="space-y-4">
+        <div class="bg-blue-50 rounded-2xl p-6 border border-blue-100">
+          <h3 class="font-bold text-slate-900 text-lg mb-4">Company Facts</h3>
+          <ul class="space-y-3 text-slate-700 text-sm">
+            {% for item in [
+              ("fa-calendar-alt", "Founded", "1993 in Bay Ridge, Brooklyn"),
+              ("fa-id-card",      "License", "NY State Master Plumber #MPL-1247-NY"),
+              ("fa-users",        "Team Size", "8 licensed plumbers"),
+              ("fa-map-marker-alt","Coverage", "All 5 NYC boroughs"),
+              ("fa-star",         "Rating", "4.9 / 5.0 · 500+ Google reviews"),
+              ("fa-briefcase",    "Jobs Completed", "Over 5,000"),
+              ("fa-clock",        "Emergency Service", "24 hours / 7 days a week"),
+              ("fa-shield-alt",   "Insurance", "$2M general liability, fully bonded")
+            ] %}
+            <li class="flex items-start gap-3">
+              <i class="fas {{ item[0] }} text-blue-600 w-4 mt-0.5"></i>
+              <span><strong>{{ item[1] }}:</strong> {{ item[2] }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <!-- Awards / recognition -->
+        <div class="bg-yellow-50 rounded-2xl p-6 border border-yellow-100">
+          <h3 class="font-bold text-slate-900 text-lg mb-3">
+            <i class="fas fa-trophy text-yellow-500 mr-2"></i>Awards & Recognition
+          </h3>
+          <ul class="space-y-2 text-slate-700 text-sm">
+            <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-500 text-xs"></i> "Best of NYC" Plumber — 5 consecutive years</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-500 text-xs"></i> Angi Super Service Award 2021, 2022, 2023</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-500 text-xs"></i> Google Guaranteed & Screened</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-yellow-500 text-xs"></i> BBB Accredited Business — A+ Rating</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     STATS BAR
+════════════════════════════════════════════════════════ -->
+<section class="bg-blue-700 text-white py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div><div class="text-4xl font-extrabold">1993</div><div class="text-blue-200 text-sm mt-1">Year Founded</div></div>
+      <div><div class="text-4xl font-extrabold">5,000+</div><div class="text-blue-200 text-sm mt-1">Jobs Completed</div></div>
+      <div><div class="text-4xl font-extrabold">8</div><div class="text-blue-200 text-sm mt-1">Licensed Plumbers</div></div>
+      <div><div class="text-4xl font-extrabold">4.9★</div><div class="text-blue-200 text-sm mt-1">Average Rating</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     MEET THE TEAM
+════════════════════════════════════════════════════════ -->
+<section class="py-16 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-12">
+      <span class="text-blue-600 font-semibold text-sm uppercase tracking-widest">The Team</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Meet Our Plumbers</h2>
+      <p class="text-slate-500 mt-3 max-w-xl mx-auto">
+        Every member of our team is licensed, background-checked, and trained to Apex standards.
+      </p>
+    </div>
+
+    <!-- Team cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Team member 1: Frank Rossi (Owner) -->
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 text-center">
+        <div class="w-24 h-24 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-5">
+          <i class="fas fa-user-tie text-white text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900">Frank Rossi</h3>
+        <div class="text-blue-600 font-medium text-sm mt-1 mb-3">Owner & Master Plumber</div>
+        <p class="text-slate-500 text-sm leading-relaxed">
+          Licensed Master Plumber with 30+ years of experience. Frank founded Apex Plumbing in 1993
+          and personally oversees every large-scale job. Specialises in pipe replacement,
+          sewer systems, and commercial plumbing.
+        </p>
+        <div class="mt-4 text-xs text-slate-400">License: #MPL-1247-NY · Since 1993</div>
+      </div>
+
+      <!-- Team member 2: Marco DeLuca -->
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 text-center">
+        <div class="w-24 h-24 bg-blue-700 rounded-full flex items-center justify-center mx-auto mb-5">
+          <i class="fas fa-hard-hat text-white text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900">Marco DeLuca</h3>
+        <div class="text-blue-600 font-medium text-sm mt-1 mb-3">Senior Plumber</div>
+        <p class="text-slate-500 text-sm leading-relaxed">
+          15 years of experience with a focus on residential and kitchen/bathroom remodelling.
+          Marco has worked on over 1,200 jobs with Apex and holds the NYC Journeyman Plumber certificate.
+          Known for his attention to detail and tidy work sites.
+        </p>
+        <div class="mt-4 text-xs text-slate-400">NYC Journeyman Plumber · Since 2009</div>
+      </div>
+
+      <!-- Team member 3: James Wong -->
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 text-center">
+        <div class="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-5">
+          <i class="fas fa-wrench text-white text-4xl"></i>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900">James Wong</h3>
+        <div class="text-blue-600 font-medium text-sm mt-1 mb-3">Plumber & Sewer Specialist</div>
+        <p class="text-slate-500 text-sm leading-relaxed">
+          8 years with Apex and our go-to specialist for sewer line inspections, hydro-jetting,
+          and trenchless pipe repair. James is certified in video pipe inspection and drain cleaning
+          equipment. He handles most of our emergency overnight calls.
+        </p>
+        <div class="mt-4 text-xs text-slate-400">Sewer & Drain Certified · Since 2016</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     OUR VALUES
+════════════════════════════════════════════════════════ -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-12">
+      <span class="text-blue-600 font-semibold text-sm uppercase tracking-widest">How We Work</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Our Core Values</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {% for value in [
+        ("fa-handshake",      "Honesty",      "We give upfront pricing before we start — no bait-and-switch, no hidden fees."),
+        ("fa-medal",          "Quality",       "Every job is done to code and inspected before we leave. We stand behind our work."),
+        ("fa-bolt",           "Speed",         "We arrive fast. For emergencies, that means under 30 minutes — any time of day."),
+        ("fa-smile",          "Care",          "We treat your home like our own. We clean up after every job without being asked.")
+      ] %}
+      <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 text-center">
+        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+          <i class="fas {{ value[0] }} text-blue-700 text-2xl"></i>
+        </div>
+        <h3 class="font-bold text-slate-900 text-lg mb-2">{{ value[1] }}</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">{{ value[2] }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     BOTTOM CTA
+════════════════════════════════════════════════════════ -->
+<section class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-14">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold mb-4">Ready to Work With Us?</h2>
+    <p class="text-blue-200 mb-8">Get a free quote or call us directly — we're available 24/7.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="{{ url_for('quote') }}"
+         class="bg-white text-blue-900 font-bold px-6 py-3.5 rounded-xl hover:bg-blue-50 transition-all shadow">
+        Get a Free Quote
+      </a>
+      <a href="{{ url_for('contact') }}"
+         class="border-2 border-white/80 text-white font-bold px-6 py-3.5 rounded-xl hover:bg-white/10 transition-all">
+        Contact Us
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

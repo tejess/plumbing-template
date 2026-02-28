@@ -1,0 +1,15 @@
+/*
+ * Tailwind CSS Source File
+ * ════════════════════════════════════════════════════════
+ * These three lines import all of Tailwind's styles.
+ * When you run `npm run build`, Tailwind reads this file,
+ * scans the HTML templates for class names, and outputs
+ * only the CSS that's actually used → backend/static/css/tailwind.css
+ *
+ * You rarely need to edit this file directly.
+ * Add any custom styles to: backend/static/css/style.css
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Thank You — Apex Plumbing Co.{% endblock %}
+
+{% block content %}
+
+<!-- ══════════════════════════════════════════════════════
+     SUCCESS / THANK YOU PAGE
+     ══════════════════════════════════════════════════════
+     Shown after the contact or quote form is successfully submitted.
+     The 'form_type' variable comes from app.py — it's either
+     'contact' or 'quote', so we can customise the message slightly.
+════════════════════════════════════════════════════════ -->
+<section class="min-h-[70vh] bg-slate-50 flex items-center">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+
+    <!-- Animated checkmark circle -->
+    <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
+      <i class="fas fa-check text-green-600 text-4xl"></i>
+    </div>
+
+    <!-- Headline — changes based on which form was submitted -->
+    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
+      {% if form_type == 'quote' %}
+        Quote Request Received!
+      {% else %}
+        Message Sent!
+      {% endif %}
+    </h1>
+
+    <!-- Subtext -->
+    <p class="text-slate-500 text-lg leading-relaxed mb-8">
+      {% if form_type == 'quote' %}
+        Thank you for requesting a free quote. We'll review your project details and
+        get back to you with a price within <strong>2 hours</strong> during business hours.
+      {% else %}
+        Thank you for reaching out to Apex Plumbing. We've received your message and
+        will reply within a few hours. If your situation is urgent, please call us directly.
+      {% endif %}
+    </p>
+
+    <!-- What happens next -->
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 text-left mb-8">
+      <h2 class="font-bold text-slate-900 mb-4 text-center">What Happens Next?</h2>
+      <ol class="space-y-3">
+        <li class="flex items-start gap-3">
+          <span class="w-7 h-7 bg-blue-700 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
+          <span class="text-slate-600">We review your message and look up your area.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-7 h-7 bg-blue-700 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
+          <span class="text-slate-600">A member of our team calls or emails you back, usually within 2 hours.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-7 h-7 bg-blue-700 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">3</span>
+          <span class="text-slate-600">
+            {% if form_type == 'quote' %}
+              We confirm a price and schedule a time that works for you.
+            {% else %}
+              We answer your question or schedule a visit if needed.
+            {% endif %}
+          </span>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Emergency note -->
+    <div class="bg-red-50 border border-red-100 rounded-xl p-4 mb-8">
+      <p class="text-red-700 text-sm">
+        <i class="fas fa-exclamation-triangle mr-2"></i>
+        <strong>Got an emergency?</strong> Don't wait for an email reply —
+        call us right now at <a href="tel:+12125550180" class="font-bold underline">(212) 555-0180</a>.
+        We're available 24/7.
+      </p>
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="{{ url_for('index') }}"
+         class="bg-blue-700 text-white font-bold px-6 py-3 rounded-xl hover:bg-blue-800 transition-colors shadow-sm">
+        Back to Home
+      </a>
+      <a href="{{ url_for('services') }}"
+         class="border-2 border-slate-200 text-slate-700 font-bold px-6 py-3 rounded-xl hover:border-blue-300 hover:text-blue-700 transition-colors">
+        View Our Services
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
