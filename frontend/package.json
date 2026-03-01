@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Frontend build tooling for Apex Plumbing Co. website",
   "scripts": {
-    "build": "tailwindcss -i ./src/css/input.css -o ../backend/static/css/tailwind.css --minify",
-    "dev":   "tailwindcss -i ./src/css/input.css -o ../backend/static/css/tailwind.css --watch"
+    "build": "tailwindcss -i ./src/css/input.css -o ./css/tailwind.css --minify",
+    "dev":   "tailwindcss -i ./src/css/input.css -o ./css/tailwind.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.0"

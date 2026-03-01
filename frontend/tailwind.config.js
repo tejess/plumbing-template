@@ -1,21 +1,20 @@
 /**
  * Tailwind CSS Configuration
  * ════════════════════════════════════════════════════════
- * This tells Tailwind which files to scan for class names.
- * Tailwind only includes CSS for the classes it actually finds —
- * this keeps the final CSS file small and fast.
+ * Scans frontend HTML files and JS for Tailwind class names.
+ * Only includes CSS for classes actually used — keeps output small.
  *
  * Run `npm run build` (in this folder) to compile the CSS.
- * The output goes to: backend/static/css/tailwind.css
+ * Output: frontend/css/tailwind.css
  */
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    // Scan all HTML templates in the Flask backend
-    '../backend/templates/**/*.html',
+    // Scan all HTML files in the frontend
+    "./*.html",
     // Scan JavaScript files too (in case they add classes dynamically)
-    '../backend/static/js/**/*.js',
+    "./js/**/*.js",
     './src/**/*.{html,js}',
   ],
   theme: {

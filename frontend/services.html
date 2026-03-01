@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services — Apex Plumbing Co.</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="font-sans bg-white text-slate-800 antialiased">
+
+  <!-- TOP UTILITY BAR -->
+  <div class="bg-slate-900 text-white text-sm py-2.5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-5 flex-wrap justify-center sm:justify-start">
+        <a href="tel:+12125550180" class="flex items-center gap-2 hover:text-blue-300 transition-colors" title="Call us now">
+          <i class="fas fa-phone text-blue-400 text-xs"></i>
+          <span>(212) 555-0180</span>
+        </a>
+        <a href="mailto:info@apexplumbingnyc.com" class="flex items-center gap-2 hover:text-blue-300 transition-colors" title="Email us">
+          <i class="fas fa-envelope text-blue-400 text-xs"></i>
+          <span>info@apexplumbingnyc.com</span>
+        </a>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-slate-400 text-xs hidden sm:block">Follow us:</span>
+        <a href="#" aria-label="Instagram" class="w-7 h-7 flex items-center justify-center rounded-full bg-slate-700 hover:bg-pink-600 transition-colors">
+          <i class="fab fa-instagram text-xs"></i>
+        </a>
+        <a href="#" aria-label="Facebook" class="w-7 h-7 flex items-center justify-center rounded-full bg-slate-700 hover:bg-blue-700 transition-colors">
+          <i class="fab fa-facebook-f text-xs"></i>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="w-7 h-7 flex items-center justify-center rounded-full bg-slate-700 hover:bg-blue-500 transition-colors">
+          <i class="fab fa-linkedin-in text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-wrench text-white"></i>
+          </div>
+          <div class="leading-tight">
+            <div class="font-bold text-blue-900 text-lg">Apex Plumbing</div>
+            <div class="text-xs text-slate-400">New York, NY</div>
+          </div>
+        </a>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="index.html" data-nav="index"
+             class="px-4 py-2 rounded-md font-medium transition-colors text-slate-600 hover:text-blue-700 hover:bg-slate-50">
+            Welcome
+          </a>
+          <a href="services.html" data-nav="services"
+             class="px-4 py-2 rounded-md font-medium transition-colors text-slate-600 hover:text-blue-700 hover:bg-slate-50">
+            Services
+          </a>
+          <a href="about.html" data-nav="about"
+             class="px-4 py-2 rounded-md font-medium transition-colors text-slate-600 hover:text-blue-700 hover:bg-slate-50">
+            About Us
+          </a>
+          <a href="contact.html" data-nav="contact"
+             class="px-4 py-2 rounded-md font-medium transition-colors text-slate-600 hover:text-blue-700 hover:bg-slate-50">
+            Contact Us
+          </a>
+          <a href="quote.html"
+             class="ml-3 bg-blue-700 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-800 transition-colors shadow-sm flex items-center gap-2">
+            <i class="fas fa-file-alt text-sm"></i>
+            Free Quote
+          </a>
+        </div>
+        <button id="menu-toggle"
+                class="md:hidden p-2 rounded-md text-slate-600 hover:text-blue-700 hover:bg-slate-100 transition-colors"
+                aria-label="Toggle navigation menu"
+                aria-expanded="false">
+          <i class="fas fa-bars text-xl" id="menu-icon"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white pb-2">
+      <div class="px-4 pt-2 space-y-1">
+        <a href="index.html" data-nav="index"
+           class="flex items-center gap-3 px-4 py-2.5 rounded-md font-medium text-slate-600 hover:text-blue-700 hover:bg-slate-50">
+          <i class="fas fa-home w-4 text-blue-400"></i> Welcome
+        </a>
+        <a href="services.html" data-nav="services"
+           class="flex items-center gap-3 px-4 py-2.5 rounded-md font-medium text-slate-600 hover:text-blue-700 hover:bg-slate-50">
+          <i class="fas fa-tools w-4 text-blue-400"></i> Services
+        </a>
+        <a href="about.html" data-nav="about"
+           class="flex items-center gap-3 px-4 py-2.5 rounded-md font-medium text-slate-600 hover:text-blue-700 hover:bg-slate-50">
+          <i class="fas fa-building w-4 text-blue-400"></i> About Us
+        </a>
+        <a href="contact.html" data-nav="contact"
+           class="flex items-center gap-3 px-4 py-2.5 rounded-md font-medium text-slate-600 hover:text-blue-700 hover:bg-slate-50">
+          <i class="fas fa-envelope w-4 text-blue-400"></i> Contact Us
+        </a>
+        <a href="quote.html"
+           class="flex items-center gap-3 px-4 py-2.5 rounded-md font-medium text-white bg-blue-700 hover:bg-blue-800">
+          <i class="fas fa-file-alt w-4"></i> Free Quote
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- PAGE HEADER -->
+    <section class="bg-gradient-to-br from-slate-900 to-blue-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Our Plumbing Services</h1>
+        <p class="text-blue-200 text-lg max-w-2xl mx-auto">
+          From emergency repairs to complete installations — licensed, insured, and available 24/7.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- SERVICES GRID -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div class="bg-slate-50 rounded-2xl border border-slate-100 p-7 hover:shadow-md hover:-translate-y-1 transition-all group">
+            <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-red-200 transition-colors">
+              <i class="fas fa-exclamation-triangle text-red-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Emergency Plumbing</h3>
+            <p class="text-slate-500 leading-relaxed mb-5">
+              We're on call every hour of every day. Burst pipes, sewage backups, flooding —
+              we dispatch a plumber within 30 minutes, any time, anywhere in NYC.
+              No extra charge for nights or weekends on most jobs.
+            </p>
+            <a href="quote.html" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-1 text-sm">
+              Get a Quote <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+          <div class="bg-slate-50 rounded-2xl border border-slate-100 p-7 hover:shadow-md hover:-translate-y-1 transition-all group">
+            <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-200 transition-colors">
+              <i class="fas fa-water text-blue-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Drain Cleaning</h3>
+            <p class="text-slate-500 leading-relaxed mb-5">
+              Slow drains, recurring clogs, or a drain that's completely blocked — we use professional
+              hydro-jetting and motorised snaking equipment to clear blockages fast without damaging
+              your pipes.
+            </p>
+            <a href="quote.html" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-1 text-sm">
+              Get a Quote <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+          <div class="bg-slate-50 rounded-2xl border border-slate-100 p-7 hover:shadow-md hover:-translate-y-1 transition-all group">
+            <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-orange-200 transition-colors">
+              <i class="fas fa-fire text-orange-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Water Heater Service</h3>
+            <p class="text-slate-500 leading-relaxed mb-5">
+              Installation, repair, flushing, and full replacement of all water heater types —
+              traditional tank-style, tankless, heat pump, and solar units.
+              Most same-day replacements available.
+            </p>
+            <a href="quote.html" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-1 text-sm">
+              Get a Quote <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+          <div class="bg-slate-50 rounded-2xl border border-slate-100 p-7 hover:shadow-md hover:-translate-y-1 transition-all group">
+            <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-teal-200 transition-colors">
+              <i class="fas fa-search text-teal-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Leak Detection &amp; Repair</h3>
+            <p class="text-slate-500 leading-relaxed mb-5">
+              Unexplained water bills? Damp walls? We use electronic leak detection equipment to
+              find hidden leaks behind walls and under slabs — no guesswork, no unnecessary demolition.
+              Fixed fast and sealed permanently.
+            </p>
+            <a href="quote.html" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-1 text-sm">
+              Get a Quote <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+          <div class="bg-slate-50 rounded-2xl border border-slate-100 p-7 hover:shadow-md hover:-translate-y-1 transition-all group">
+            <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-purple-200 transition-colors">
+              <i class="fas fa-stream text-purple-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Pipe Repair &amp; Replacement</h3>
+            <p class="text-slate-500 leading-relaxed mb-5">
+              Cracked, corroded, or leaking pipes repaired or replaced with modern materials.
+              We handle everything from a single joint to full house repiping — copper, PEX, CPVC,
+              and galvanised steel.
+            </p>
+            <a href="quote.html" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-1 text-sm">
+              Get a Quote <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+          <div class="bg-slate-50 rounded-2xl border border-slate-100 p-7 hover:shadow-md hover:-translate-y-1 transition-all group">
+            <div class="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-pink-200 transition-colors">
+              <i class="fas fa-bath text-pink-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Bathroom &amp; Kitchen Plumbing</h3>
+            <p class="text-slate-500 leading-relaxed mb-5">
+              Full plumbing services for renovations and remodels: toilet installation, sink and
+              vanity hookups, shower systems, bathtub replacement, garbage disposals,
+              dishwashers, and more.
+            </p>
+            <a href="quote.html" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-1 text-sm">
+              Get a Quote <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+          <div class="bg-slate-50 rounded-2xl border border-slate-100 p-7 hover:shadow-md hover:-translate-y-1 transition-all group">
+            <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-yellow-200 transition-colors">
+              <i class="fas fa-exchange-alt text-yellow-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Sewer Line Services</h3>
+            <p class="text-slate-500 leading-relaxed mb-5">
+              Main sewer line inspection (video camera), hydro-jet cleaning, root intrusion removal,
+              and trenchless pipe repair/lining. We can diagnose and fix most sewer issues without
+              digging up your yard.
+            </p>
+            <a href="quote.html" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-1 text-sm">
+              Get a Quote <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+          <div class="bg-slate-50 rounded-2xl border border-slate-100 p-7 hover:shadow-md hover:-translate-y-1 transition-all group">
+            <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-green-200 transition-colors">
+              <i class="fas fa-burn text-green-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Gas Line Services</h3>
+            <p class="text-slate-500 leading-relaxed mb-5">
+              Certified gas line installation, repair, and pressure testing.
+              We handle gas line hookups for stoves, dryers, boilers, fireplaces, and generators.
+              All work is performed to NYC DOB code and pressure-tested before sign-off.
+            </p>
+            <a href="quote.html" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-1 text-sm">
+              Get a Quote <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+          <div class="bg-slate-50 rounded-2xl border border-slate-100 p-7 hover:shadow-md hover:-translate-y-1 transition-all group">
+            <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-5 group-hover:bg-indigo-200 transition-colors">
+              <i class="fas fa-building text-indigo-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Commercial Plumbing</h3>
+            <p class="text-slate-500 leading-relaxed mb-5">
+              Office buildings, restaurants, retail spaces, and multi-unit residential — we handle
+              commercial accounts with maintenance contracts, priority response times, and detailed
+              reporting for property managers.
+            </p>
+            <a href="quote.html" class="text-blue-600 font-semibold hover:text-blue-800 flex items-center gap-1 text-sm">
+              Get a Quote <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- WHY CHOOSE US BAR -->
+    <section class="py-12 bg-blue-50 border-y border-blue-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div>
+            <i class="fas fa-clock text-blue-600 text-2xl mb-2"></i>
+            <div class="font-bold text-slate-900">24/7 Available</div>
+            <div class="text-slate-500 text-sm">Nights, weekends &amp; holidays</div>
+          </div>
+          <div>
+            <i class="fas fa-dollar-sign text-blue-600 text-2xl mb-2"></i>
+            <div class="font-bold text-slate-900">Upfront Pricing</div>
+            <div class="text-slate-500 text-sm">Quoted before we start</div>
+          </div>
+          <div>
+            <i class="fas fa-shield-alt text-blue-600 text-2xl mb-2"></i>
+            <div class="font-bold text-slate-900">Licensed &amp; Insured</div>
+            <div class="text-slate-500 text-sm">License #MPL-1247-NY</div>
+          </div>
+          <div>
+            <i class="fas fa-thumbs-up text-blue-600 text-2xl mb-2"></i>
+            <div class="font-bold text-slate-900">Satisfaction Guarantee</div>
+            <div class="text-slate-500 text-sm">We don't leave until it's right</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- BOTTOM CTA -->
+    <section class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-14">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold mb-4">Not Sure Which Service You Need?</h2>
+        <p class="text-blue-200 mb-8">
+          Describe your issue and we'll figure it out together — no commitment required.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="quote.html"
+             class="bg-white text-blue-900 font-bold px-6 py-3.5 rounded-xl hover:bg-blue-50 transition-all shadow">
+            Get a Free Quote
+          </a>
+          <a href="tel:+12125550180"
+             class="border-2 border-white/80 text-white font-bold px-6 py-3.5 rounded-xl hover:bg-white/10 transition-all flex items-center gap-2">
+            <i class="fas fa-phone"></i> (212) 555-0180
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-wrench text-white"></i>
+            </div>
+            <div>
+              <div class="font-bold text-lg">Apex Plumbing Co.</div>
+              <div class="text-slate-400 text-xs">New York, NY · Since 1993</div>
+            </div>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed mb-5">
+            Licensed, bonded, and insured plumbing professionals serving all five NYC boroughs.
+            Available 24/7 for emergencies — we arrive in under 30 minutes.
+          </p>
+          <div class="flex gap-3">
+            <a href="#" aria-label="Instagram" class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-700 hover:bg-pink-600 transition-colors">
+              <i class="fab fa-instagram text-sm"></i>
+            </a>
+            <a href="#" aria-label="Facebook" class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-700 hover:bg-blue-700 transition-colors">
+              <i class="fab fa-facebook-f text-sm"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-700 hover:bg-blue-500 transition-colors">
+              <i class="fab fa-linkedin-in text-sm"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg mb-4">Quick Links</h3>
+          <ul class="space-y-2.5 text-slate-400">
+            <li><a href="index.html"    class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-blue-500"></i>Home</a></li>
+            <li><a href="services.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-blue-500"></i>Our Services</a></li>
+            <li><a href="about.html"    class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-blue-500"></i>About Us</a></li>
+            <li><a href="contact.html"  class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-blue-500"></i>Contact Us</a></li>
+            <li><a href="quote.html"    class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-blue-500"></i>Free Quote</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg mb-4">Contact Info</h3>
+          <ul class="space-y-3 text-slate-400 text-sm">
+            <li class="flex items-start gap-3">
+              <i class="fas fa-map-marker-alt text-blue-400 mt-0.5 w-4"></i>
+              <span>123 Plumber's Way, Suite 4B<br>New York, NY 10001</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="fas fa-phone text-blue-400 w-4"></i>
+              <a href="tel:+12125550180" class="hover:text-white transition-colors">(212) 555-0180</a>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="fas fa-envelope text-blue-400 w-4"></i>
+              <a href="mailto:info@apexplumbingnyc.com" class="hover:text-white transition-colors">info@apexplumbingnyc.com</a>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fas fa-clock text-blue-400 mt-0.5 w-4"></i>
+              <div>
+                <div>Mon–Fri: 7:00am – 8:00pm</div>
+                <div>Sat–Sun: 8:00am – 6:00pm</div>
+                <div class="text-blue-400 font-medium mt-1">24/7 Emergency Service</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4
+                  flex flex-col sm:flex-row justify-between items-center gap-2
+                  text-sm text-slate-500">
+        <div>© 2024 Apex Plumbing Co. All rights reserved.</div>
+        <div>License #MPL-1247-NY · Bonded &amp; Insured</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
