@@ -6,8 +6,6 @@ const navLinks = [
     { to: '/services', label: 'Services', icon: 'fa-tools', key: 'services' },
     { to: '/about', label: 'About Us', icon: 'fa-building', key: 'about' },
     { to: '/contact', label: 'Contact Us', icon: 'fa-envelope', key: 'contact' },
-    { to: '/clients', label: 'Clients', icon: 'fa-users', key: 'clients' },
-    { to: '/schedule', label: 'Schedule', icon: 'fa-calendar-alt', key: 'schedule' },
 ];
 
 export default function Navbar() {

@@ -78,7 +78,7 @@ def jobber_request(query, variables=None):
 
 @app.route('/api/contact', methods=['POST'])
 def api_contact():
-    """Accepts name, email, phone, message — sends an email."""
+    """Accepts name, email, phone, message — creates a Jobber client + request."""
     data    = request.get_json(force=True, silent=True) or {}
     name    = data.get('name', '').strip()
     email   = data.get('email', '').strip()
@@ -88,28 +88,60 @@ def api_contact():
     if not name or not email or not message:
         return jsonify({'ok': False, 'error': 'Please fill in all required fields.'}), 400
 
-    try:
-        msg = Message(
-            subject=f'New Contact Form Submission — {name}',
-            recipients=[RECIPIENT_EMAIL],
-            body=f"""New message from the Apex Plumbing website:
+    # Split name into first / last (last may be empty)
+    parts      = name.split(' ', 1)
+    first_name = parts[0]
+    last_name  = parts[1] if len(parts) > 1 else ''
 
-Name:     {name}
-Email:    {email}
-Phone:    {phone if phone else 'Not provided'}
+    # 1. Create (or re-use) a Jobber client
+    client_input = {'firstName': first_name, 'lastName': last_name}
+    if email:
+        client_input['emails'] = [{'address': email, 'primary': True}]
+    if phone:
+        client_input['phones'] = [{'number': phone, 'primary': True}]
 
-Message:
-{message}
-"""
-        )
-        mail.send(msg)
-        return jsonify({'ok': True})
+    client_result = jobber_request(
+        """
+        mutation CreateClient($input: ClientCreateInput!) {
+          clientCreate(input: $input) {
+            client { id }
+            userErrors { message }
+          }
+        }
+        """,
+        {'input': client_input}
+    )
 
-    except Exception as e:
-        return jsonify({
-            'ok': False,
-            'error': f'Message could not be sent — please call us at (212) 555-0180. (Error: {e})'
-        }), 500
+    if 'error' in client_result:
+        return jsonify({'ok': False, 'error': client_result['error']}), 502
+
+    user_errors = client_result.get('data', {}).get('clientCreate', {}).get('userErrors', [])
+    if user_errors:
+        return jsonify({'ok': False, 'error': user_errors[0]['message']}), 400
+
+    client_id = client_result['data']['clientCreate']['client']['id']
+
+    # 2. Create a Jobber request linked to that client
+    request_result = jobber_request(
+        """
+        mutation CreateRequest($input: RequestCreateInput!) {
+          requestCreate(input: $input) {
+            request { id }
+            userErrors { message }
+          }
+        }
+        """,
+        {'input': {'clientId': client_id, 'title': message}}
+    )
+
+    if 'error' in request_result:
+        return jsonify({'ok': False, 'error': request_result['error']}), 502
+
+    req_errors = request_result.get('data', {}).get('requestCreate', {}).get('userErrors', [])
+    if req_errors:
+        return jsonify({'ok': False, 'error': req_errors[0]['message']}), 400
+
+    return jsonify({'ok': True})
 
 
 @app.route('/api/quote', methods=['POST'])
